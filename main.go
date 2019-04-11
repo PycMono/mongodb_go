@@ -4,13 +4,13 @@ import (
 	"context"
 	"fmt"
 	"go.mongodb.org/mongo-driver/bson"
-	"moqikaka.com/mongodb_go/src/mongodbMgr"
+	"moqikaka.com/mongodb_go/src/dal"
 	"time"
 )
 
 func main() {
-	mongodbMgr.StartConn()
-	db := mongodbMgr.GetDB()
+	dal.StartConn()
+	db := dal.GetDB()
 	fmt.Println(db.Name())
 	conllection := db.Collection("p_copy")
 

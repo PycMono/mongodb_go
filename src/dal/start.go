@@ -1,4 +1,4 @@
-package mongodbMgr
+package dal
 
 import (
 	"context"
