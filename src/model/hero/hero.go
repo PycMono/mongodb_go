@@ -1,6 +1,6 @@
 package hero
 
-// 武将对象
+// hero object
 type Hero struct {
 	// 玩家ID
 	PlayerID string
@@ -16,4 +16,43 @@ type Hero struct {
 
 	// 阶段
 	Step int
+
+	// total experience
+	ExpTotal int
+}
+
+// create new hero object
+// parameter：
+// playerID：unique id
+// heroID：unique id of hero
+// modelID： unique id of hero model
+// lv：lv of hero
+// step：step of hero
+func NewHero(playerID, heroID string, modelID, lv, step int) *Hero {
+	return &Hero{
+		PlayerID: playerID,
+		HeroID:   heroID,
+		MoldeID:  modelID,
+		Lv:       lv,
+		Step:     step,
+	}
+}
+
+// create new hero object
+// parameter：
+// playerID：unique id
+// heroID：unique id of hero
+// modelID： unique id of hero model
+// lv：lv of hero
+// step：step of hero
+// experience：hero current experience
+func NewHero1(playerID, heroID string, modelID, lv, step, experience int) *Hero {
+	return &Hero{
+		PlayerID: playerID,
+		HeroID:   heroID,
+		MoldeID:  modelID,
+		Lv:       lv,
+		Step:     step,
+		ExpTotal: experience,
+	}
 }

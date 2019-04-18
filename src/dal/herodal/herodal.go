@@ -1,4 +1,4 @@
-package copydal
+package herodal
 
 import (
 	"context"
@@ -51,13 +51,11 @@ func InsertData(data []interface{}) {
 	conllection := db.Collection(getCollectionName())
 
 	ctx, _ := context.WithTimeout(context.Background(), 30*time.Second)
-	result, err := conllection.InsertMany(ctx, data)
+	_, err := conllection.InsertMany(ctx, data)
 	if err != nil {
 		fmt.Println(fmt.Sprintf("copydal.InsertData error,error_msg=%v", err))
 		return
 	}
-
-	fmt.Println(fmt.Sprintf("%v", result.InsertedIDs))
 }
 
 // get name of collection
@@ -66,5 +64,5 @@ func InsertData(data []interface{}) {
 // result：
 // 1.collection name
 func getCollectionName() string {
-	return "p_copy"
+	return "p_hero"
 }
